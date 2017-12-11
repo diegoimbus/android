@@ -20,4 +20,5 @@
     <string name="close_menu">Menu cerrado</string>
     <string name="mapas">Encuentra un box</string>
     <string name="comparar">Compara resultados</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

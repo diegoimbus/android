@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener {
         when(item?.itemId){
             R.id.nav_home -> putFragment(R.id.container, MainFragment.instance())
             R.id.nav_logut -> startActivity<LoginActivity>()
+            R.id.nav_action -> startActivity<MapsActivity>()
         }
         return true
     }
