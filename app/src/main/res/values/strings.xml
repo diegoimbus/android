@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Peliculas</string>
+    <string name="app_name">C2B</string>
 
-    <string name="title">Estrenos</string>
+    <string name="title">Chest to Bar</string>
     <string name="signin">Registrate</string>
     <string name="email">Email</string>
     <string name="pass">Password</string>
