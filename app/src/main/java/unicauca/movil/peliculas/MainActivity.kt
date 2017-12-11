@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.startActivity
 import unicauca.movil.peliculas.fragments.MainFragment
 
 class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener {
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener {
         drawer.closeDrawers()
         when(item?.itemId){
             R.id.nav_home -> putFragment(R.id.container, MainFragment.instance())
-            //...
+            R.id.nav_logut -> startActivity<LoginActivity>()
         }
         return true
     }
@@ -56,6 +57,7 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener {
         if (toggle.onOptionsItemSelected(item)) {
             return true
         }
+
         return super.onOptionsItemSelected(item)
     }
 
