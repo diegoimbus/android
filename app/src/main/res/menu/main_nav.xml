@@ -5,20 +5,12 @@
         android:title="@string/home"
         android:icon="@drawable/ic_home"/>
     <item android:id="@+id/nav_action"
-        android:title="@string/action"
-        android:icon="@drawable/ic_action"/>
+        android:title="@string/mapas"
+        android:icon="@drawable/ic_map"/>
     <item android:id="@+id/nav_comedy"
-        android:title="@string/comedy"
-        android:icon="@drawable/ic_comedy"/>
-    <item android:id="@+id/nav_fantasy"
-        android:title="@string/fantasy"
-        android:icon="@drawable/ic_fantasy"/>
-    <item android:id="@+id/nav_horror"
-        android:title="@string/horror"
-        android:icon="@drawable/ic_horror"/>
-    <item android:id="@+id/nav_adventure"
-        android:title="@string/adventure"
-        android:icon="@drawable/ic_adventure"/>
+        android:title="@string/comparar"
+        android:icon="@drawable/ic_comparar"/>
+
 
     <item android:title="@string/profile">
         <menu>
