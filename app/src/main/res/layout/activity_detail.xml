@@ -65,7 +65,7 @@
             app:layout_anchor="@id/appbar"
             app:layout_anchorGravity="bottom|right"
             android:layout_margin="@dimen/small"
-            app:srcCompat="@drawable/ic_favorite"
+            app:srcCompat="@drawable/ic_cambiar"
             />
 
     </android.support.design.widget.CoordinatorLayout>
