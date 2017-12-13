@@ -2,6 +2,9 @@ package unicauca.movil.peliculas
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -14,11 +17,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.ma) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
 
@@ -35,8 +39,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val strenghtFit = LatLng(2.444026, -76.598368)
+        val fitness = LatLng(2.457971, -76.598222)
+        val corpus = LatLng(2.454350, -76.603064)
+        val tnt = LatLng(2.482668, -76.577378)
+        val complejo = LatLng(2.489776, -76.592997)
+
+        mMap.addMarker(MarkerOptions().position(strenghtFit).title("STRENGHT FIT - calle 1BN #2AE-06"))
+        mMap.addMarker(MarkerOptions().position(fitness).title("Fitness Gym - Cl. 18N #12-2"))
+        mMap.addMarker(MarkerOptions().position(corpus).title("Corpus Gym - Cra. 11 Nte #33 11"))
+        mMap.addMarker(MarkerOptions().position(tnt).title("TNT Athlete's Performance - Tv 9A Norte #61100"))
+        mMap.addMarker(MarkerOptions().position(complejo).title("Complejo Deportivo de Popayán"))
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(strenghtFit))
     }
 }
