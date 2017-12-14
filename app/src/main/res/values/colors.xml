@@ -6,4 +6,5 @@
     <color name="img_bg">#333333</color>
     <color name="icon">#555</color>
     <color name="bgBtn">#eee</color>
+    <color name="borrar">#D32F2F</color>
 </resources>

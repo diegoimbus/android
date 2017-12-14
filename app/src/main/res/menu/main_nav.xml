@@ -8,8 +8,8 @@
         android:title="@string/mapas"
         android:icon="@drawable/ic_map"/>
     <item android:id="@+id/nav_comedy"
-        android:title="@string/comparar"
-        android:icon="@drawable/ic_comparar"/>
+        android:title="Graba un wod"
+        android:icon="@drawable/ic_camera_roll"/>
 
 
     <item android:title="@string/profile">
