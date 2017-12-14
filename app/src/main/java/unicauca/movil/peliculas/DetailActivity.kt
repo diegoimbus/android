@@ -17,11 +17,15 @@ import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 import unicauca.movil.peliculas.databinding.ActivityDetailBinding
+import unicauca.movil.peliculas.db.AppDB
+import unicauca.movil.peliculas.db.PeliculaDao
 import unicauca.movil.peliculas.util.Data
+import kotlin.concurrent.thread
 
 class DetailActivity : AppCompatActivity(), Callback {
 
     lateinit var binding:ActivityDetailBinding
+    val dao: PeliculaDao = AppDB.db.peliculaDao()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,13 +34,17 @@ class DetailActivity : AppCompatActivity(), Callback {
         setSupportActionBar(toolbar)
 
         val pos = intent.extras.getInt("pos", 0)
-        val pelicula = Data.peliculas[pos]
-        binding.pelicula = pelicula
+        thread{
+            val pelicula = dao.all()[pos]
+           runOnUiThread {         binding.pelicula = pelicula
 
-        collapsing.title = pelicula.nombre
-        Picasso.with(this)
-                .load(Uri.parse(pelicula.imagen))
-                .into(img, this)
+               collapsing.title = pelicula.nombre
+               Picasso.with(this)
+                       .load(Uri.parse(pelicula.imagen))
+                       .into(img, this) }
+        }
+
+
 
     }
 

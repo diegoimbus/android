@@ -12,6 +12,7 @@ import android.view.MenuItem
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
+import unicauca.movil.peliculas.R.id.list
 import unicauca.movil.peliculas.adapters.PeliculaAdapter
 import unicauca.movil.peliculas.databinding.ActivityMainBinding
 import unicauca.movil.peliculas.db.AppDB
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.handler = this
+
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         drawer.addDrawerListener(this)

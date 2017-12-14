@@ -8,6 +8,7 @@ import unicauca.movil.peliculas.databinding.ActivityAddBinding
 import unicauca.movil.peliculas.db.AppDB
 import unicauca.movil.peliculas.db.PeliculaDao
 import unicauca.movil.peliculas.models.Pelicula
+import kotlin.concurrent.thread
 
 
 class AddActivity : AppCompatActivity() {
@@ -32,8 +33,12 @@ class AddActivity : AppCompatActivity() {
         val pelicula = Pelicula(nombre.toString(), duracion.toString(), estreno.toString(), imagen.toString(), sinopsis.toString()
         )
 
-        dao.insert(pelicula)
+        thread{
+            dao.insert(pelicula)
 
-        finish()
+            runOnUiThread {
+                finish()
+            }
+        }
     }
 }

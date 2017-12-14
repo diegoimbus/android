@@ -18,4 +18,7 @@ import unicauca.movil.peliculas.models.Pelicula
 
     @Query("SELECT * FROM pelicula WHERE id = :id")
     fun peliculaById(id:Long):Pelicula
+
+    @Query("SELECT * FROM pelicula")
+    fun all():List<Pelicula>
 }
