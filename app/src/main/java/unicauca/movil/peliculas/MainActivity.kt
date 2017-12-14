@@ -2,6 +2,7 @@ package unicauca.movil.peliculas
 
 
 import android.content.Intent
+import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.widget.DrawerLayout
@@ -11,7 +12,12 @@ import android.view.MenuItem
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
+import unicauca.movil.peliculas.adapters.PeliculaAdapter
+import unicauca.movil.peliculas.databinding.ActivityMainBinding
+import unicauca.movil.peliculas.db.AppDB
+import unicauca.movil.peliculas.db.PeliculaDao
 import unicauca.movil.peliculas.fragments.MainFragment
+
 
 class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener {
 
@@ -20,9 +26,14 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener {
                 R.string.open_menu, R.string.close_menu)
     }
 
+    private lateinit var binding: ActivityMainBinding
+    private val adapter: PeliculaAdapter =  PeliculaAdapter {  }
+    val dao: PeliculaDao = AppDB.db.peliculaDao()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.handler = this
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         drawer.addDrawerListener(this)
@@ -48,6 +59,9 @@ class MainActivity : AppCompatActivity(), DrawerLayout.DrawerListener {
             R.id.nav_action -> startActivity<MapsActivity>()
         }
         return true
+    }
+    fun goToAdd(){
+        startActivity<AddActivity>()
     }
 
     //region Toggle
